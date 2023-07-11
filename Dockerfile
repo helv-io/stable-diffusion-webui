@@ -22,7 +22,7 @@ RUN apt-get update && \
 	tzdata \
 	libgoogle-perftools4 \
 	libtcmalloc-minimal4 \
-	ffmpeg&& \
+	ffmpeg && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
