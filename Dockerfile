@@ -20,8 +20,9 @@ RUN apt-get update && \
 	net-tools \
 	iproute2 \
 	tzdata \
- 	libgoogle-perftools4 \
-  	libtcmalloc-minimal4 && \
+	libgoogle-perftools4 \
+	libtcmalloc-minimal4 \
+	ffmpeg&& \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
