@@ -19,7 +19,9 @@ RUN apt-get update && \
 	sudo \
 	net-tools \
 	iproute2 \
-	tzdata && \
+	tzdata \
+ 	libgoogle-perftools4 \
+  	libtcmalloc-minimal4 && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
