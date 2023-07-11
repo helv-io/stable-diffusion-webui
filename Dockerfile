@@ -39,4 +39,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 # Cache to optimize redeployments
 VOLUME /root/.cache
 
+# Expose default port
+EXPOSE 7861
+
 CMD ["python3", "launch.py", "--listen", "--enable-insecure-extension-access"]
