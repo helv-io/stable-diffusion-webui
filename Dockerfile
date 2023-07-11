@@ -19,7 +19,7 @@ RUN apt-get update && \
 	sudo \
 	net-tools \
 	iproute2 \
-	&& \
+	tzdata && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
