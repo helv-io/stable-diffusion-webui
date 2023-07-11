@@ -39,4 +39,4 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 # Cache to optimize redeployments
 VOLUME /root/.cache
 
-CMD ["python3", "launch.py", "--listen"]
+CMD ["python3", "launch.py", "--listen", "--enable-insecure-extension-access"]
