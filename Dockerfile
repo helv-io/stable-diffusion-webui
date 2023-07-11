@@ -46,4 +46,4 @@ VOLUME /root/.cache
 # Expose default port
 EXPOSE 7861
 
-CMD ["python3", "launch.py", "--enable-insecure-extension-access", "--listen", "--no-half"]
+CMD ["python3", "launch.py", "--enable-insecure-extension-access", "--listen"]
