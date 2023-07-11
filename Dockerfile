@@ -32,6 +32,7 @@ RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui .
 
 # setup venv in /venv to avoid conflict with volume in /stable-diffusion-webui
 RUN echo 'venv_dir=/venv' > webui-user.sh
+RUN echo 'xformers' >> requirements.txt
 
 ENV install_dir=/
 RUN ./webui.sh -f can_run_as_root --exit --skip-torch-cuda-test
