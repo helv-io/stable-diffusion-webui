@@ -33,7 +33,7 @@ WORKDIR /app
 RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui .
 
 RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3
-RUN pip3 install requirements.txt
+RUN pip3 install -r requirements.txt
 RUN python3 launch.py --skip-torch-cuda-test --exit
 
 # Cache to optimize redeployments
