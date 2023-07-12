@@ -6,8 +6,8 @@ ENV TZ=${TZ}
 
 # Install required packages and libraries
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+RUN apt update && \
+    apt install -y --no-install-recommends \
     libgl1 \
     libglib2.0-0 \
     python3 \
@@ -23,7 +23,8 @@ RUN apt-get update && \
     libgoogle-perftools4 \
     libtcmalloc-minimal4 \
     ffmpeg && \
-    apt-get clean && \
+    apt clean && \
+    apt upgrade -y && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -32,7 +33,6 @@ RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui .
 
 # setup venv in /venv to avoid conflict with volume in /stable-diffusion-webui
 RUN echo 'venv_dir=/venv' > webui-user.sh
-RUN echo 'xformers' >> requirements.txt
 
 ENV install_dir=/
 RUN ./webui.sh -f can_run_as_root --exit --skip-torch-cuda-test
