@@ -31,7 +31,7 @@ WORKDIR /app
 
 RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui .
 
-ENV install_dir=/
+RUN pip3 install /app/requirements.txt
 RUN /usr/bin/python3 /app/launch.py --skip-torch-cuda-test --exit
 
 # Cache to optimize redeployments
