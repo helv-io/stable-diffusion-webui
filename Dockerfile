@@ -31,14 +31,8 @@ WORKDIR /app
 
 RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui .
 
-# setup venv in /venv to avoid conflict with volume in /stable-diffusion-webui
-RUN echo 'venv_dir=/venv' > webui-user.sh
-
 ENV install_dir=/
-RUN ./webui.sh -f can_run_as_root --exit --skip-torch-cuda-test
-
-ENV VIRTUAL_ENV=/venv
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+RUN python3 launch.py --skip-torch-cuda-test --exit
 
 # Cache to optimize redeployments
 VOLUME /root/.cache
